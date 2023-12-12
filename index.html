@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="app.css">
+    <script src="https://kit.fontawesome.com/da49f06da0.js" crossorigin="anonymous"></script>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <section id="general">
+            <form action="" id="search">
+                <label for="city-search" aria-label="enter a city"><i class="fa-solid fa-location-dot"></i></label>
+                <input type="text" name="city" id="city-search" placeholder="City Name" autocomplete="off">
+            </form>
+            <div id="general--info">
+                <div class="general--info__wrapper">
+                    <div class="info-container">
+                        <div>
+                            <h1 id="weather--degree">
+                                28&deg;
+                            </h1>
+                            <p id="weather--info">Rainy day</p>
+                        </div>
+                        <p id="note"></p>
+                    </div>
+                    <div class="list-container">
+                        <div class="block general--block">
+                            <h2 class="block--header">
+                                <i class="fa-solid fa-temperature-quarter"></i> Feels Like
+                            </h2>
+                            <p id="feels-like">
+                                30&deg;
+                            </p>
+                        </div>
+                        <div class="block general--block">
+                            <h2 class="block--header">
+                                <i class="fa-solid fa-droplet"></i> Precipitation
+                            </h2>
+                            <p id="precipitation">
+                                30&deg;
+                            </p>
+                        </div>
+                        <div class="block general--block">
+                            <h2 class="block--header">
+                                <i class="fa-solid fa-eye"></i> Visibility
+                            </h2>
+                            <p id="visibility">
+                                30&deg;
+                            </p>
+                        </div>
+                        <div class="block general--block">
+                            <h2 class="block--header">
+                                <img class="block--header__img" src="images/droplets.svg" alt=""> Humidity
+                            </h2>
+                            <p id="humidity">
+                                30&deg;
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="main">
+            <div class="block forecast-block">
+                <h2 class="block--header header--border"><i class="fa-regular fa-clock"></i> Hourly</h2>
+                <div class="forecast-container" id="hourly-forecast">
+                    <div class="forecast forecast-loading hourly-forecast"></div>
+                    <div class="forecast forecast-loading hourly-forecast"></div>
+                    <div class="forecast forecast-loading hourly-forecast"></div>
+                    <div class="forecast forecast-loading hourly-forecast"></div>
+                    <div class="forecast forecast-loading hourly-forecast"></div>
+                </div>
+            </div>
+            </div>
+            </div>
+            <div class="block forecast-block">
+                <h2 class="block--header header--border"><i class="fa-regular fa-calendar"></i> 10 Day forecast</h2>
+                <div class="forecast-container" id="days-forecast">
+                    <div class="forecast forecast-loading daily-forecast"></div>
+                    <div class="forecast forecast-loading daily-forecast"></div>
+                    <div class="forecast forecast-loading daily-forecast"></div>
+                    <div class="forecast forecast-loading daily-forecast"></div>
+                    <div class="forecast forecast-loading daily-forecast"></div>
+                </div>
+            </div>
+            <div class="list-container">
+                <div class="block general--block">
+                    <h2 class="block--header">
+                        <i class="fa-solid fa-temperature-quarter"></i> UV index
+                    </h2>
+                    <p class="forecast-text" id="uv">3</p>
+                </div>
+                <div class="block general--block">
+                    <h2 class="block--header">
+                        <i class="fa-solid fa-wind"></i> Wind
+                    </h2>
+                    <div class="wind">
+                        <p class="forecast-text" id="wind">3</p>
+                        <div class="wind--metrics"><span class="metric">KPH</span><span class="metric-type">Wind</span></div>
+                    </div>
+                    <div class="wind">
+                        <p class="forecast-text" id="gust">3</p>
+                        <div class="wind--metrics"><span class="metric">KPH</span><span class="metric-type">Gust</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="popup" class="hide">
+            <div class="status">
+            </div>
+            <div id="popup-text">
+            </div>
+            <button id="popup-btn">
+                <i class="fa fa-x"></i>
+            </button>
+        </div>
+    </main>
+</body>
+
+</html>
