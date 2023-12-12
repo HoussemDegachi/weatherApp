@@ -42,7 +42,10 @@ const cities = [
 ];
 
 // try to access user's geolocation
-navigator.geolocation.getCurrentPosition((location) => {
+setTimeout(start, 3600000)
+
+function start() {
+  navigator.geolocation.getCurrentPosition((location) => {
     const query = `${location.coords.latitude.toFixed(2)},${location.coords.longitude.toFixed(2)}`
     main(query)
 }, () => {
@@ -55,6 +58,7 @@ navigator.geolocation.getCurrentPosition((location) => {
       main(randomCity)
     }
 });
+}
 
 // search for forecast
 htmlElems.searchForm.addEventListener("submit", (event) => {
@@ -70,7 +74,7 @@ async function main(query) {
     const location = forecast.location
     const current =  forecast.current
     const forcastDays = forecast.forecast.forecastday
-    
+    removeClass("forecast-loading")
     // update forecast values with data
     htmlElems.input.value = `${location.name}, ${location.country}`
     changeValue(htmlElems.weatherDegree, `${current.temp_c}°`)
@@ -199,6 +203,13 @@ function removeClassItems(className) {
   }
 }
 
+function removeClass(className) {
+  const items = document.querySelectorAll(`.${className}`)
+  for (let item of items) {
+    item.classList.remove(className)
+  }
+}
+
 function displayPopup(text) {
   htmlElems.popupText.innerText = text
   htmlElems.popup.classList.remove("hide")
@@ -213,3 +224,4 @@ function hidePopup() {
 }
 
 document.querySelector("#popup-btn").addEventListener("click", hidePopup)
+start()

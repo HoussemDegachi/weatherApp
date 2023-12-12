@@ -215,12 +215,27 @@ main {
 }
 
 .forecast-loading {
-    width: 120px;
-    height: 136px;
     animation: forecast-loading 700ms ease infinite alternate-reverse;
 }
-.forecast-loading:not(:last-child) {
-    margin-right: 30px ;
+
+.forecast.forecast-loading {
+    width: 120px;
+    height: 136px;
+}
+
+.forecast.forecast-loading:not(:last-child) {
+    margin-right: 30px;
+}
+
+#weather--degree.forecast-loading, #weather--info.forecast-loading {
+    min-width: 100px;
+    min-height: 30px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+
+#weather--degree.forecast-loading {
+    min-width: 150px;
 }
 
 @keyframes forecast-loading {
@@ -347,7 +362,7 @@ main {
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     body {
         background: url("images/bg.jpg");
         background-size: cover;
