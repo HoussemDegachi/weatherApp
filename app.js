@@ -90,7 +90,7 @@ async function getForecast(query) {
   // returns forecast from api
   const now = new Date()
   if (query !== localStorage.getItem("lastCity") || Math.abs(now - new Date(localStorage.getItem("lastUpdate"))) > 3600000) {
-    const rawData = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=91af10e2bb8049e6bd9162309230512&q=${query}&days=10`)
+    const rawData = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=91af10e2bb8049e6bd9162309230512&q=${query}&days=10`)
     const data = await rawData.json()
     try {
       const location = `${data.location.lat},${data.location.lon}`
