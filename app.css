@@ -10,6 +10,7 @@
     --bg-grey: #797979b9;
     --text-white: #ffffff;
     --text-light-grey: #b4b4b4;
+    --bg-img: "images/bg1.jpg";
 }
 
 html, body, div, span, object, iframe,
@@ -105,7 +106,7 @@ main {
 }
 
 #general--info {
-    background: url("images/bg.jpg");
+    background: url("images/bg1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 600px;
@@ -364,7 +365,7 @@ main {
 
 @media (max-width: 900px) {
     body {
-        background: url("images/bg.jpg");
+        background: url("images/bg1.jpg");
         background-size: cover;
         background-repeat: no-repeat;
     }
